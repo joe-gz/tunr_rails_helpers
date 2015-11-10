@@ -1,6 +1,30 @@
 <h2>Edit Song</h2>
 
-<form action="/songs/<%= @song.id %>" method="post">
+<%= render partial: "form" %>
+
+<%= form_for @song, method: "delete" do |f| %>
+  <%= f.submit "Delete Song", class: "delete"%>
+<% end %>
+
+
+<!-- <%= form_for @song do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :album %>
+  <%= f.text_field :album %>
+
+  <%= f.label :preview_url, "Preview URL" %>
+  <%= f.text_field :preview_url %>
+
+  <%= f.label :artist_id %>
+  <%= f.text_field :artist_id %>
+
+  <%= f.submit "Update Song"%>
+<% end %>
+ -->
+ 
+<!-- <form action="/songs/<%= @song.id %>" method="post">
   <input type="hidden" name="_method" value="put">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
@@ -17,11 +41,11 @@
   <input name="song[artist_id]" value="<%= @song.artist_id %>">
 
   <input type="submit" value="Update Song">
-</form>
+</form> -->
 
-<form action="/songs/<%= @song.id %>" method="post">
+<!-- <form action="/songs/<%= @song.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <input class="delete" type="submit" value="Delete Song">
-</form>
+</form> -->

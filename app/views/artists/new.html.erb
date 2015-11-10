@@ -1,6 +1,9 @@
 <h2>New Artist</h2>
 
-<form method="post" action="/artists">
+<%= render partial: "form" %>
+
+
+<!-- <form method="post" action="<%=artists_path()%>">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <label>Name</label>
@@ -13,4 +16,4 @@
   <input type="text" name="artist[nationality]">
 
   <input type="submit" value="Create Artist">
-</form>
+</form> -->
